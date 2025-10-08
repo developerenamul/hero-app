@@ -1,11 +1,16 @@
 import React from "react";
 import Container from "../components/Container";
+import Banner from "../components/Banner";
+import Stat from "../components/Stat";
 
 const Home = () => {
   return (
-    <Container>
-      <h2>hello</h2>
-    </Container>
+    <div>
+      <Container>
+        <Banner></Banner>
+      </Container>
+      <Stat></Stat>
+    </div>
   );
 };
 
