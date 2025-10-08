@@ -20,7 +20,7 @@ const Navbar = () => {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+              />
             </svg>
           </div>
           <ul
@@ -28,48 +28,33 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <NavLink to="/">
-              <li>
-                <a>Home</a>
-              </li>
+              <li className="mx-2">Home</li>
             </NavLink>
             <NavLink to="/apps">
-              <li>
-                <a>Apps</a>
-              </li>
+              <li className="mx-2">Apps</li>
             </NavLink>
             <NavLink to="/installation">
-              <li>
-                <a>Installation</a>
-              </li>
+              <li className="mx-2">Installation</li>
             </NavLink>
           </ul>
         </div>
-        <Link to="/">
-          <a className="btn btn-ghost text-xl">
-            {" "}
-            <span>
-              <img src={logo} alt="logo" className="w-[40px] object-cover" />
-            </span>{" "}
-            Hero.io
-          </a>
+        <Link to="/" className="btn btn-ghost text-xl">
+          <span>
+            <img src={logo} alt="logo" className="w-[40px] object-cover" />
+          </span>{" "}
+          Hero.io
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <NavLink to="/">
-            <li>
-              <a>Home</a>
-            </li>
+            <li className="mx-2">Home</li>
           </NavLink>
           <NavLink to="/apps">
-            <li>
-              <a>Apps</a>
-            </li>
+            <li className="mx-2">Apps</li>
           </NavLink>
           <NavLink to="/installation">
-            <li>
-              <a>Installation</a>
-            </li>
+            <li className="mx-2">Installation</li>
           </NavLink>
         </ul>
       </div>
