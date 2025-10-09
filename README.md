@@ -1,16 +1,35 @@
-# React + Vite
+## HERO APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+"This is a React-based web application that allows users to browse, search, and manage applications. It includes features like installing apps, viewing app details, searching with real-time filtering, and maintaining installed apps in local storage."
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Browse all available applications
 
-## React Compiler
+Search for apps in real-time
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+View app details including downloads, rating, and description
 
-## Expanding the ESLint configuration
+Install apps and maintain installed list in local storage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Responsive design for desktop and mobile
+
+Error handling for invalid routes
+
+Loading spinner during data fetch and search operations
+
+## Tech Stack
+
+Frontend: React, React Router, Tailwind CSS
+
+State Management: React hooks (useState, useEffect)
+
+Icons: React Icons
+
+Data Storage: Local Storage
+
+---
+
+## Live Link:
+
+https://graceful-salamander-122fa4.netlify.app/
