@@ -2,7 +2,7 @@ import { FaDownload } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router";
 const AppCard = ({ card }) => {
-  const { image, companyName, downloads, ratingAvg } = card;
+  const { image, title, downloads, ratingAvg } = card;
 
   return (
     <Link to={`/apps/app-details/${card.id}`} state={{ addData: card }}>
@@ -10,12 +10,12 @@ const AppCard = ({ card }) => {
         <figure className="p-3">
           <img
             src={image}
-            alt={companyName}
+            alt={title}
             className="h-[250px] w-[200px] object-cover rounded"
           />
         </figure>
         <div className="card-body ">
-          <h2 className="card-title">{companyName}</h2>
+          <h2 className="card-title">{title}</h2>
           <div className="flex justify-between items-center  pr-0 gap-4">
             <p className=" flex items-center gap-1 bg-green-300 p-1 rounded font-bold">
               <span>
