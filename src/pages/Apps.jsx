@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import Container from "../components/Container";
 import AppCards from "../components/AppCards";
-
+import Spinner from "../components/Spinner";
 const Apps = () => {
   const allData = useLoaderData();
   const [searchText, setSearchText] = useState("");
-
+  const [isLoading, setIsLoading] = useState(false);
   const handleSearch = (e) => {
     setSearchText(e.target.value.toLowerCase());
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 300);
   };
 
   const filteredData = searchText
@@ -24,7 +29,7 @@ const Apps = () => {
       </div>
 
       <Container>
-        <div className="flex justify-between">
+        <div className="flex flex-col md:flex-row gap-3 justify-between items-center">
           <h2 className="text-xl font-bold">({allData.length}) Apps Found</h2>
           <input
             type="search"
@@ -35,6 +40,18 @@ const Apps = () => {
           />
         </div>
         <AppCards slicedData={filteredData}></AppCards>
+
+        {isLoading ? (
+          <div className="flex justify-center py-10">
+            <Spinner />
+          </div>
+        ) : filteredData.length > 0 ? (
+          <AppCards slicedData={filteredData} />
+        ) : (
+          <div className="text-center text-gray-500 text-lg py-10">
+            😒 No App Found
+          </div>
+        )}
       </Container>
     </div>
   );

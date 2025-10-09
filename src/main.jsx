@@ -8,10 +8,15 @@ import Home from "./pages/Home";
 import Apps from "./pages/Apps";
 import Installation from "./pages/Installation";
 import AppDetails from "./pages/AppDetails";
+import Error from "./pages/Error";
+import AppError from "./pages/AppError";
+import Spinner from "./components/Spinner";
 const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
+    errorElement: <AppError></AppError>,
+    hydrateFallbackElement: <Spinner></Spinner>,
     children: [
       {
         path: "/",
@@ -23,13 +28,14 @@ const router = createBrowserRouter([
         loader: () => fetch("/data.json"),
       },
       {
-        path: "apps",
+        path: "/apps",
         Component: Apps,
         loader: () => fetch("/data.json"),
       },
       {
         path: "apps/app-details/:id",
         Component: AppDetails,
+        errorElement: <Error></Error>,
       },
       {
         path: "installation",
