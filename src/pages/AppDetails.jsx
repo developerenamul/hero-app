@@ -1,11 +1,12 @@
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { FaStar } from "react-icons/fa";
 import Container from "../components/Container";
 import { Link, useLocation, useParams } from "react-router";
 import { FaDownload } from "react-icons/fa6";
 import { BiSolidLike } from "react-icons/bi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RenderBarChart from "../components/RenderBarChart";
+import { addToStoreDB } from "../utilities";
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -21,12 +22,18 @@ const AppDetails = () => {
     title,
   } = location.state.addData;
   const { ratings } = location.state.addData;
-  console.log(location.state.addData);
 
   const [Isinstalled, setIsinstalled] = useState(false);
+  useEffect(() => {
+    const storedData = JSON.parse(localStorage.getItem("installedLists")) || [];
+    const alreadyInstalled = storedData.find((app) => app.id === +id);
+    if (alreadyInstalled) {
+      setIsinstalled(true);
+    }
+  }, [id]);
   const handleIsinstalled = () => {
     setIsinstalled(true);
-    toast("added");
+    addToStoreDB(location.state.addData);
   };
   return (
     <div>

@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import Container from "../components/Container";
 import AppCards from "../components/AppCards";
 
 const Apps = () => {
   const allData = useLoaderData();
+  const [searchText, setSearchText] = useState("");
 
+  const handleSearch = (e) => {
+    setSearchText(e.target.value.toLowerCase());
+  };
+
+  const filteredData = searchText
+    ? allData.filter((app) => app.title.toLowerCase().includes(searchText))
+    : allData;
   return (
     <div>
       <div>
@@ -22,9 +30,11 @@ const Apps = () => {
             type="search"
             placeholder="Search"
             className="input input-neutral"
+            value={searchText}
+            onChange={handleSearch}
           />
         </div>
-        <AppCards slicedData={allData}></AppCards>
+        <AppCards slicedData={filteredData}></AppCards>
       </Container>
     </div>
   );
