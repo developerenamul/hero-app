@@ -61,8 +61,8 @@ const Navbar = () => {
       <div className="navbar-end">
         <a
           target="_blank"
-          className="btn "
-          href="https://github.com/developerenamul/hero-app"
+          className="btn bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)_100%)] text-white"
+          href="https://github.com/developerenamul/"
         >
           {" "}
           <FaGithub />

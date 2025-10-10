@@ -18,13 +18,21 @@ const Banner = () => {
             simpler, smarter, and more exciting.Our goal is to turn your ideas
             into digital experiences that truly make an impact.
           </p>
-          <button className="btn mr-2">
+          <a
+            className="btn mr-2"
+            target="_blank"
+            href="https://play.google.com/store/games"
+          >
             <BiLogoPlayStore /> Google Play
-          </button>
-          <button className="btn">
+          </a>
+          <a
+            className="btn"
+            target="_blank"
+            href="https://play.google.com/store/apps?hl=en"
+          >
             <FaAppStoreIos />
             App Store
-          </button>
+          </a>
           <img src={bannerImg} alt="banner image" className="mt-5" />
         </div>
       </Container>
