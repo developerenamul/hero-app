@@ -22,7 +22,7 @@ const addToStoreDB = (id) => {
     storedData.push(id);
     const data = JSON.stringify(storedData);
     localStorage.setItem("installedLists", data);
-    toast.success("added");
+    toast.success("installed");
   }
 };
 
