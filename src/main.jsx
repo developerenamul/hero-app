@@ -15,7 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
-    errorElement: <AppError></AppError>,
+    errorElement: <Error></Error>,
     hydrateFallbackElement: <Spinner></Spinner>,
     children: [
       {
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: "apps/app-details/:id",
         Component: AppDetails,
-        errorElement: <Error></Error>,
+        errorElement: <AppError></AppError>,
       },
       {
         path: "installation",
