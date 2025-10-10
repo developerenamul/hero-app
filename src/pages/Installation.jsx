@@ -49,7 +49,9 @@ const Installation = () => {
             <option>Low</option>
           </select>
         </div>
-
+        <h2 className="text-2xl font-bold text-center">
+          {appsData.length === 0 && "No Apps Selected  "}
+        </h2>
         <div className="mt-5">
           {appsData.map((app) => (
             <InstallationCard
