@@ -30,7 +30,10 @@ const Apps = () => {
 
       <Container>
         <div className="flex flex-col md:flex-row gap-3 justify-between items-center">
-          <h2 className="text-xl font-bold">({allData.length}) Apps Found</h2>
+          <h2 className="text-xl font-bold">
+            ({filteredData.length >= 0 ? filteredData.length : allData.length})
+            Apps Found
+          </h2>
           <input
             type="search"
             placeholder="Search"
