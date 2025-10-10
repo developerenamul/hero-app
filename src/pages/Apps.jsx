@@ -42,7 +42,6 @@ const Apps = () => {
             onChange={handleSearch}
           />
         </div>
-        <AppCards slicedData={filteredData}></AppCards>
 
         {isLoading ? (
           <div className="flex justify-center py-10">

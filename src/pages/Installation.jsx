@@ -18,9 +18,9 @@ const Installation = () => {
     setSortOrder(order);
     const sorted = [...appsData].sort((a, b) => {
       if (order === "High") {
-        return b.size - a.size; // high to low
+        return b.downloads - a.downloads;
       } else if (order === "Low") {
-        return a.size - b.size; // low to high
+        return a.downloads - b.downloads;
       } else {
         return 0;
       }
@@ -44,7 +44,7 @@ const Installation = () => {
         <div className="flex md:flex-row flex-col gap-3  justify-between items-center mt-5">
           <p className="font-bold">{appsData.length} Apps found</p>
           <select className="select" value={sortOrder} onChange={handleSort}>
-            <option>sort by size</option>
+            <option>Sort By Downloads</option>
             <option>High</option>
             <option>Low</option>
           </select>
