@@ -14,7 +14,7 @@ const AppCards = ({ slicedData }) => {
         <h2 className="font-bold text-3xl">Trending Apps</h2>
         <p>Explore All Trending Apps on the Market developed by us</p>
       </div>
-      <div className="cards-container grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 lg:gap-2 sm:gap-5 md:gap-3  mt-5">
+      <div className="cards-container grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 lg:gap-2 gap-5 md:gap-3  mt-5">
         {slicedData.map((card) => (
           <AppCard key={card.id} card={card}></AppCard>
         ))}
