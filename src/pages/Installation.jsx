@@ -37,10 +37,15 @@ const Installation = () => {
     <div>
       <ToastContainer></ToastContainer>
       <Container>
-        <div className="text-center">
-          <h2 className="text-2xl font-bold">Your Installed Apps</h2>
-          <p>Explore All Trending Apps on the Market developed by us</p>
-        </div>
+        {appsData.length === 0 ? (
+          <h2 className="text-2xl font-bold text-center">No Apps Selected</h2>
+        ) : (
+          <div className="text-center">
+            <h2 className="text-2xl font-bold">Your Installed Apps</h2>
+            <p>Explore All Trending Apps on the Market developed by us</p>
+          </div>
+        )}
+
         <div className="flex md:flex-row flex-col gap-3  justify-between items-center mt-5">
           <p className="font-bold">{appsData.length} Apps found</p>
           <select className="select" value={sortOrder} onChange={handleSort}>
@@ -49,9 +54,7 @@ const Installation = () => {
             <option>Low</option>
           </select>
         </div>
-        <h2 className="text-2xl font-bold text-center">
-          {appsData.length === 0 && "No Apps Selected  "}
-        </h2>
+
         <div className="mt-5">
           {appsData.map((app) => (
             <InstallationCard
